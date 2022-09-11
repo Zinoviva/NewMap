@@ -10,14 +10,16 @@ public class Main {
         int maxCount = 0;  //макс кол
         int minCount = 0;  //мин кол
 
-        for (int i = 0; i < alphabet.length(); i++)  //создадим для хранения увиденные символы
+        for (int i = 0; i < alphabet.length(); i++) {//создадим для хранения увиденные символы
             map.put(alphabet.charAt(i), 0);
+        }
 
-        //находим нужный символ кот нужно искать
+        //находим нужный символ, кот нужно искать
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
-            if (map.containsKey(c))  //если он содержится в нашей мапе- увиливаем его количество
+            if (map.containsKey(c)) { //если он содержится в нашей мапе- увиливаем его количество
                 map.put(c, map.get(c) + 1);
+            }
             //проверяем максимальное количество и установливаем соответствующие значения
             if (map.containsKey(c) && map.get(c) > maxCount) {
                 //occursTheMost = c;
@@ -37,8 +39,9 @@ public class Main {
             int tempCount = 0;
             charSequence = "" + character;
             for (int i = 0; i < words.length; i++) {
-                if (words[i].contains(charSequence))
+                if (words[i].contains(charSequence)){
                     tempCount++;
+                }
             }
 
             if (tempCount > wordCount) {
